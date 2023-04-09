@@ -1,32 +1,99 @@
+# Project X
 
-* 注册 [CodeSandbox](https://codesandbox.io/)
-> 提醒： 滥用可能导致账户被BAN！！！ 
-官网：https://glitch.com
+[Project X](https://github.com/XTLS) originates from XTLS protocol, provides a set of network tools such as [Xray-core](https://github.com/XTLS/Xray-core).
 
-## 概述
+## License
 
-用于在 glitch中 部署 vless+websocket+tls，每次部署自动选择最新的 alpine linux 和 Xray core 。  
-vless 性能更加优秀，占用资源更少。
+[Mozilla Public License Version 2.0](https://github.com/XTLS/Xray-core/blob/main/LICENSE)
 
-* 使用[xray](https://github.com/XTLS/Xray-core)+caddy同时部署通过ws传输的vmess vless trojan shadowsocks socks等协议，并默认已配置好伪装网站。
-* 支持tor网络，且可通过自定义网络配置文件启动xray和caddy来按需配置各种功能  
-* 支持存储自定义文件,目录及账号密码均为UUID,客户端务必使用TLS连接  
+## Installation
 
+- Linux Script
+  - [Xray-install](https://github.com/XTLS/Xray-install)
+  - [Xray-script](https://github.com/kirin10000/Xray-script)
+- Docker
+  - [teddysun/xray](https://hub.docker.com/r/teddysun/xray)
+- One Click
+  - [ProxySU](https://github.com/proxysu/ProxySU)
+  - [v2ray-agent](https://github.com/mack-a/v2ray-agent)
+  - [Xray-yes](https://github.com/jiuqi9997/Xray-yes)
+  - [Xray_onekey](https://github.com/wulabing/Xray_onekey)
+- Magisk
+  - [Xray4Magisk](https://github.com/CerteKim/Xray4Magisk)
+  - [Xray_For_Magisk](https://github.com/E7KMbb/Xray_For_Magisk)
+- Homebrew
+  - `brew install xray`
+  - [(Tap) Repository 0](https://github.com/N4FA/homebrew-xray)
+  - [(Tap) Repository 1](https://github.com/xiruizhao/homebrew-xray)
 
- >  代理协议：vless 或 vmess 或 Trojan-go
+## Contributing
+[Code Of Conduct](https://github.com/XTLS/Xray-core/blob/main/CODE_OF_CONDUCT.md)
 
-    *地址：平台分配的域名链接
+## Usage
 
-    *端口：443
+[Xray-examples](https://github.com/XTLS/Xray-examples) / [VLESS-TCP-XTLS-WHATEVER](https://github.com/XTLS/Xray-examples/tree/main/VLESS-TCP-XTLS-WHATEVER)
 
-    *默认UUID：
+## GUI Clients
 
-    *加密：none
+- OpenWrt
+  - [PassWall](https://github.com/xiaorouji/openwrt-passwall)
+  - [Hello World](https://github.com/jerrykuku/luci-app-vssr)
+  - [ShadowSocksR Plus+](https://github.com/fw876/helloworld)
+  - [luci-app-xray](https://github.com/yichya/luci-app-xray) ([openwrt-xray](https://github.com/yichya/openwrt-xray))
+- Windows
+  - [v2rayN](https://github.com/2dust/v2rayN)
+  - [Qv2ray](https://github.com/Qv2ray/Qv2ray) (This project had been archived and currently inactive)
+  - [Netch (NetFilter & TUN/TAP)](https://github.com/NetchX/Netch) (This project had been archived and currently inactive)
+- Android
+  - [v2rayNG](https://github.com/2dust/v2rayNG)
+  - [Kitsunebi](https://github.com/rurirei/Kitsunebi/tree/release_xtls)
+- iOS & macOS (with M1 chip)
+  - [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)
+  - [Stash](https://apps.apple.com/app/stash/id1596063349)
+- macOS (Intel chip & M1 chip)
+  - [Qv2ray](https://github.com/Qv2ray/Qv2ray) (This project had been archived and currently inactive)
+  - [V2RayXS](https://github.com/tzmax/V2RayXS)
 
-    *传输协议：ws
+## Credits
 
-    *伪装类型：none
+This repo relies on the following third-party projects:
 
-    *路径：/$AUUID-vless // 默认vless使用/$AUUID-vless，vmess使用/$AUUID-vmess，Trojan使用/$AUUID-Trojan
+- Special thanks:
+  - [v2fly/v2ray-core](https://github.com/v2fly/v2ray-core)
+- In production:
+  - [ghodss/yaml](https://github.com/ghodss/yaml)
+  - [gorilla/websocket](https://github.com/gorilla/websocket)
+  - [quic-go/quic-go](https://github.com/quic-go/quic-go)
+  - [pelletier/go-toml](https://github.com/pelletier/go-toml)
+  - [pires/go-proxyproto](https://github.com/pires/go-proxyproto)
+  - [refraction-networking/utls](https://github.com/refraction-networking/utls)
+  - [seiflotfy/cuckoofilter](https://github.com/seiflotfy/cuckoofilter)
+  - [google/starlark-go](https://github.com/google/starlark-go)
+- For testing only:
+  - [miekg/dns](https://github.com/miekg/dns)
+  - [stretchr/testify](https://github.com/stretchr/testify)
+  - [h12w/socks](https://github.com/h12w/socks)
 
-    *底层传输安全：tls
+## Compilation
+
+### Windows
+
+```bash
+go build -o xray.exe -trimpath -ldflags "-s -w -buildid=" ./main
+```
+
+### Linux / macOS
+
+```bash
+go build -o xray -trimpath -ldflags "-s -w -buildid=" ./main
+```
+
+## Telegram
+
+[Project X](https://t.me/projectXray)
+
+[Project X Channel](https://t.me/projectXtls)
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/XTLS/Xray-core.svg)](https://starchart.cc/XTLS/Xray-core)
